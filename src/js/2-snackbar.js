@@ -19,8 +19,8 @@ const createPromise = (delayValue, stateValue) => {
 
 function submitForm(e) {
     e.preventDefault();
-    const delayValue = form.elements.delay.value;
-    const stateValue = form.elements.state.value;
+    const delayValue = parseInt(form.elements.delay.value, 10);
+    const stateValue = document.querySelector('input[name="state"]:checked').value;
 
     createPromise(delayValue, stateValue)
         .then(delay => {
